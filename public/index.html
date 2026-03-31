@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>AppForge — HTML to Native APK Converter</title>
+  <meta name="description" content="Convert HTML, CSS, JavaScript into native Flutter APK with AI-powered code generation, ad integration, and auto-generated legal pages">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%236C63FF'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white'>⚡</text></svg>">
+</head>
+<body>
+  <!-- Background Effects -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 40 40" fill="none">
+            <rect rx="10" width="40" height="40" fill="url(#logoGrad)"/>
+            <path d="M10 12h20v4H14v4h12v4H14v4h16v4H10z" fill="white"/>
+            <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#3F3D9E"/></linearGradient></defs>
+          </svg>
+        </div>
+        <span>AppForge</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#create" class="nav-link">Create</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+      </div>
+      <button class="nav-cta" onclick="scrollToSection('create')">
+        <span>Start Building</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M6 3l5 5-5 5"/></svg>
+      </button>
+      <button class="nav-menu-btn" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#features" onclick="closeMobileMenu()">Features</a>
+      <a href="#create" onclick="closeMobileMenu()">Create App</a>
+      <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+      <button onclick="scrollToSection('create'); closeMobileMenu()">Start Building</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Powered by Flutter + AI</span>
+      </div>
+      <h1 class="hero-title">
+        Convert HTML to<br>
+        <span class="gradient-text">Native APK</span>
+        <br>in Minutes
+      </h1>
+      <p class="hero-subtitle">
+        Transform your web apps into real native Android applications.
+        AI-powered code generation, 10 ad networks, auto legal pages,
+        and GitHub Actions build — all automatic.
+      </p>
+      <div class="hero-actions">
+        <button class="btn btn-primary btn-lg" onclick="scrollToSection('create')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          Create Your App
+        </button>
+        <button class="btn btn-ghost btn-lg" onclick="scrollToSection('how-it-works')">
+          See How It Works
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-value">10</span>
+          <span class="stat-label">Ad Networks</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">100%</span>
+          <span class="stat-label">Native Flutter</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">AI</span>
+          <span class="stat-label">Powered</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">Free</span>
+          <span class="stat-label">GitHub Build</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <div class="phone-status-bar">
+            <span>9:41</span>
+            <div class="phone-icons">⚡ 📶</div>
+          </div>
+          <div class="phone-content">
+            <div class="phone-app-icon"></div>
+            <div class="phone-text"></div>
+            <div class="phone-text short"></div>
+            <div class="phone-cards">
+              <div class="phone-card"></div>
+              <div class="phone-card"></div>
+              <div class="phone-card"></div>
+              <div class="phone-card"></div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-notch"></div>
+      </div>
+      <div class="floating-badge badge-flutter">
+        <img src="https://img.shields.io/badge/Flutter-3.24-blue?logo=flutter&logoColor=white" alt="Flutter">
+      </div>
+      <div class="floating-badge badge-apk">
+        <img src="https://img.shields.io/badge/APK-Ready-green?logo=android&logoColor=white" alt="APK Ready">
+      </div>
+      <div class="floating-badge badge-ai">
+        <img src="https://img.shields.io/badge/AI-Gemini-purple?logo=google&logoColor=white" alt="AI Powered">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Features</span>
+        <h2>Everything You Need to Ship Native Apps</h2>
+        <p>From HTML to production-ready APK with zero manual work</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon" style="--accent: #6C63FF">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>HTML to Flutter</h3>
+          <p>Upload HTML/CSS/JS files or write code directly. Our AI converts everything to a complete Flutter project with native WebView integration.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="--accent: #00BCD4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>AI Code Generation</h3>
+          <p>Gemini AI generates code, fixes bugs, enhances your apps, and handles the complex parts. Groq fallback ensures always-on AI availability.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="--accent: #4CAF50">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3>10 Ad Networks</h3>
+          <p>AdMob, Meta, Unity Ads, AppLovin, StartApp, InMobi, Vungle, ironSource, Chartboost, and Pangle — all with banner, interstitial, and rewarded ads.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="--accent: #FF9800">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+          </div>
+          <h3>Auto Legal Pages</h3>
+          <p>Professional Terms of Service, Privacy Policy, and User Agreement generated automatically — customized to your app type and content.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="--accent: #E91E63">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg>
+          </div>
+          <h3>GitHub Actions CI/CD</h3>
+          <p>Generated project includes ready-to-use GitHub Actions workflow. Push to repo, get APK and AAB from artifacts automatically.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="--accent: #9C27B0">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>All Screen Sizes</h3>
+          <p>Responsive design that works perfectly on phones, tablets, and any Android device. Material Design 3 with beautiful dark theme.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Process</span>
+        <h2>From Code to APK in 4 Steps</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Upload or Write Code</h3>
+            <p>Drag & drop your HTML/CSS/JS files or write code directly in our editor. Support for any number of files.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Configure Your App</h3>
+            <p>Set app name, package, version, and permissions. Add ad networks with a click. Legal pages generate automatically.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>AI Enhancement</h3>
+            <p>Our AI debugs, enhances, and optimizes your code. Converts web patterns to native-friendly formats automatically.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Download & Build</h3>
+            <p>Download the Flutter project ZIP. Push to GitHub, run Actions, and get your APK/AAB ready for Play Store.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Create App Section -->
+  <section class="create-section" id="create">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Builder</span>
+        <h2>Create Your Native App</h2>
+        <p>Everything configured in one place</p>
+      </div>
+
+      <div class="builder">
+        <!-- Tab Navigation -->
+        <div class="builder-tabs">
+          <button class="tab active" data-tab="files" onclick="switchTab('files')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M13 2v7h7"/></svg>
+            Files
+          </button>
+          <button class="tab" data-tab="code" onclick="switchTab('code')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+            Write Code
+          </button>
+          <button class="tab" data-tab="ai" onclick="switchTab('ai')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 014 4v2a4 4 0 01-8 0V6a4 4 0 014-4zM6 10v2a6 6 0 0012 0v-2M4 16h16M4 20h16"/></svg>
+            AI Assistant
+          </button>
+          <button class="tab" data-tab="config" onclick="switchTab('config')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+            Settings
+          </button>
+          <button class="tab" data-tab="ads" onclick="switchTab('ads')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Ads
+          </button>
+        </div>
+
+        <div class="builder-body">
+          <!-- Files Tab -->
+          <div class="tab-content active" id="tab-files">
+            <div class="upload-zone" id="uploadZone">
+              <div class="upload-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+              </div>
+              <h3>Drag & Drop Files</h3>
+              <p>or click to browse — HTML, CSS, JS, images, any files</p>
+              <input type="file" id="fileInput" multiple hidden>
+              <button class="btn btn-secondary" onclick="document.getElementById('fileInput').click()">
+                Browse Files
+              </button>
+            </div>
+            <div class="file-list" id="fileList"></div>
+          </div>
+
+          <!-- Code Editor Tab -->
+          <div class="tab-content" id="tab-code">
+            <div class="editor-header">
+              <input type="text" id="codeFilename" value="index.html" placeholder="filename.html" class="input filename-input">
+              <select id="codeTemplate" onchange="loadTemplate(this.value)" class="select">
+                <option value="">Load Template...</option>
+                <option value="landing">Landing Page</option>
+                <option value="webapp">Web App</option>
+                <option value="game">Game Canvas</option>
+                <option value="form">Form App</option>
+                <option value="dashboard">Dashboard</option>
+                <option value="blank">Blank HTML</option>
+              </select>
+            </div>
+            <div class="code-editor-wrap">
+              <textarea id="codeEditor" class="code-editor" placeholder="Write your HTML/CSS/JS code here..." spellcheck="false"></textarea>
+              <div class="editor-actions">
+                <button class="btn btn-sm" onclick="addCodeToProject()">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                  Add File
+                </button>
+              </div>
+            </div>
+            <div class="code-files-list" id="codeFilesList"></div>
+          </div>
+
+          <!-- AI Assistant Tab -->
+          <div class="tab-content" id="tab-ai">
+            <div class="ai-config">
+              <div class="form-group">
+                <label>AI Provider</label>
+                <div class="radio-group">
+                  <label class="radio-card active" id="radioGemini">
+                    <input type="radio" name="aiProvider" value="gemini" checked onchange="updateAiProvider()">
+                    <span class="radio-icon">🧠</span>
+                    <span class="radio-label">Google Gemini</span>
+                    <span class="radio-desc">Free tier available</span>
+                  </label>
+                  <label class="radio-card" id="radioGroq">
+                    <input type="radio" name="aiProvider" value="groq" onchange="updateAiProvider()">
+                    <span class="radio-icon">⚡</span>
+                    <span class="radio-label">Groq</span>
+                    <span class="radio-desc">Ultra-fast inference</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>API Key</label>
+                <input type="password" id="aiApiKey" class="input" placeholder="Enter your API key (optional — AI features will be skipped if empty)">
+                <small class="form-hint">Your key is used only for this build session and never stored.</small>
+              </div>
+            </div>
+            <div class="ai-chat">
+              <div class="ai-messages" id="aiMessages">
+                <div class="ai-msg ai-msg-system">
+                  <span class="ai-avatar">🤖</span>
+                  <div class="ai-msg-content">
+                    <p>Hi! I'm your AI assistant. I can:</p>
+                    <ul>
+                      <li><strong>Generate</strong> HTML/CSS/JS code from a description</li>
+                      <li><strong>Debug</strong> your existing code and fix errors</li>
+                      <li><strong>Enhance</strong> code quality and add features</li>
+                      <li><strong>Convert</strong> code to Flutter-native patterns</li>
+                      <li><strong>Signal</strong> analyze code for issues</li>
+                    </ul>
+                    <p>Enter your API key and describe what you need!</p>
+                  </div>
+                </div>
+              </div>
+              <div class="ai-input-area">
+                <div class="ai-task-select">
+                  <button class="ai-task active" data-task="generate" onclick="setAiTask('generate')">Generate</button>
+                  <button class="ai-task" data-task="debug" onclick="setAiTask('debug')">Debug</button>
+                  <button class="ai-task" data-task="enhance" onclick="setAiTask('enhance')">Enhance</button>
+                  <button class="ai-task" data-task="convert" onclick="setAiTask('convert')">Convert</button>
+                  <button class="ai-task" data-task="signal" onclick="setAiTask('signal')">Signal</button>
+                </div>
+                <div class="ai-prompt-area">
+                  <textarea id="aiPrompt" class="input ai-textarea" placeholder="Describe what you need..." rows="2"></textarea>
+                  <button class="btn btn-primary ai-send" onclick="sendAiRequest()" id="aiSendBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Settings Tab -->
+          <div class="tab-content" id="tab-config">
+            <div class="config-grid">
+              <div class="form-group">
+                <label>App Name *</label>
+                <input type="text" id="appName" class="input" placeholder="My Awesome App" value="MyApp">
+              </div>
+              <div class="form-group">
+                <label>Package Name *</label>
+                <input type="text" id="packageName" class="input" placeholder="com.example.myapp">
+                <small class="form-hint">Unique identifier (e.g., com.company.appname)</small>
+              </div>
+              <div class="form-group">
+                <label>Version Name</label>
+                <input type="text" id="versionName" class="input" placeholder="1.0.0" value="1.0.0">
+              </div>
+              <div class="form-group">
+                <label>Version Code</label>
+                <input type="number" id="versionCode" class="input" placeholder="1" value="1">
+              </div>
+              <div class="form-group">
+                <label>Min SDK</label>
+                <select id="minSdk" class="select">
+                  <option value="21">21 (Android 5.0)</option>
+                  <option value="23" selected>23 (Android 6.0)</option>
+                  <option value="24">24 (Android 7.0)</option>
+                  <option value="26">26 (Android 8.0)</option>
+                  <option value="28">28 (Android 9.0)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Target SDK</label>
+                <select id="targetSdk" class="select">
+                  <option value="33">33 (Android 13)</option>
+                  <option value="34" selected>34 (Android 14)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Developer Name</label>
+                <input type="text" id="developerName" class="input" placeholder="Your Name">
+              </div>
+              <div class="form-group">
+                <label>App Description</label>
+                <textarea id="appDescription" class="input" placeholder="Describe your app..." rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label>App Type</label>
+                <select id="appType" class="select">
+                  <option value="general">General</option>
+                  <option value="game">Game</option>
+                  <option value="social">Social</option>
+                  <option value="ecommerce">E-Commerce</option>
+                  <option value="education">Education</option>
+                  <option value="health">Health & Fitness</option>
+                  <option value="finance">Finance</option>
+                </select>
+              </div>
+              <div class="form-group full-width">
+                <label>Permissions</label>
+                <div class="permissions-grid">
+                  <label class="checkbox-card"><input type="checkbox" value="internet" checked disabled><span>🌐 Internet</span></label>
+                  <label class="checkbox-card"><input type="checkbox" value="camera"><span>📷 Camera</span></label>
+                  <label class="checkbox-card"><input type="checkbox" value="location"><span>📍 Location</span></label>
+                  <label class="checkbox-card"><input type="checkbox" value="storage"><span>📁 Storage</span></label>
+                  <label class="checkbox-card"><input type="checkbox" value="notification"><span>🔔 Notifications</span></label>
+                  <label class="checkbox-card"><input type="checkbox" value="microphone"><span>🎤 Microphone</span></label>
+                  <label class="checkbox-card"><input type="checkbox" value="contacts"><span>👥 Contacts</span></label>
+                  <label class="checkbox-card"><input type="checkbox" value="phone"><span>📱 Phone</span></label>
+                  <label class="checkbox-card"><input type="checkbox" value="bluetooth"><span>🔵 Bluetooth</span></label>
+                  <label class="checkbox-card"><input type="checkbox" value="biometric"><span>🔐 Biometric</span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ads Tab -->
+          <div class="tab-content" id="tab-ads">
+            <div class="ads-header">
+              <p>Configure ad networks for monetization. Select networks and ad types.</p>
+            </div>
+            <div class="ads-grid" id="adsGrid"></div>
+            <div class="ads-config-area" id="adsConfigArea" style="display:none;">
+              <h3 id="adsConfigTitle">Configure Network</h3>
+              <div id="adsConfigFields"></div>
+              <div class="ads-types" id="adsTypes"></div>
+              <button class="btn btn-primary" onclick="saveAdConfig()">Save Configuration</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Build Button -->
+        <div class="builder-footer">
+          <div class="build-summary" id="buildSummary">
+            <span id="summaryFiles">0 files</span>
+            <span>•</span>
+            <span id="summaryAds">0 ad networks</span>
+            <span>•</span>
+            <span>Legal pages: Auto</span>
+          </div>
+          <button class="btn btn-primary btn-lg btn-build" onclick="buildApp()" id="buildBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            Generate Flutter Project
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Build Result Modal -->
+  <div class="modal" id="buildModal">
+    <div class="modal-backdrop" onclick="closeModal()"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Building Your App...</h2>
+        <button class="modal-close" onclick="closeModal()">×</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <div class="build-progress">
+          <div class="progress-ring">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(108,99,255,0.2)" stroke-width="8"/>
+              <circle cx="50" cy="50" r="45" fill="none" stroke="#6C63FF" stroke-width="8" stroke-linecap="round" stroke-dasharray="283" stroke-dashoffset="283" id="progressCircle"/>
+            </svg>
+            <span id="progressPercent">0%</span>
+          </div>
+          <div class="build-steps" id="buildSteps">
+            <div class="build-step" data-step="collect">
+              <span class="step-dot"></span>
+              <span>Collecting files</span>
+            </div>
+            <div class="build-step" data-step="legal">
+              <span class="step-dot"></span>
+              <span>Generating legal pages</span>
+            </div>
+            <div class="build-step" data-step="ads">
+              <span class="step-dot"></span>
+              <span>Configuring ads</span>
+            </div>
+            <div class="build-step" data-step="ai">
+              <span class="step-dot"></span>
+              <span>AI enhancement</span>
+            </div>
+            <div class="build-step" data-step="flutter">
+              <span class="step-dot"></span>
+              <span>Generating Flutter project</span>
+            </div>
+            <div class="build-step" data-step="package">
+              <span class="step-dot"></span>
+              <span>Packaging ZIP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" id="modalFooter" style="display:none;">
+        <a id="downloadBtn" class="btn btn-primary btn-lg" href="#">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download Flutter Project
+        </a>
+        <button class="btn btn-secondary btn-lg" onclick="showGithubInstructions()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub Build Instructions
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 40 40" fill="none">
+                <rect rx="10" width="40" height="40" fill="url(#logoGrad2)"/>
+                <path d="M10 12h20v4H14v4h12v4H14v4h16v4H10z" fill="white"/>
+                <defs><linearGradient id="logoGrad2" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#3F3D9E"/></linearGradient></defs>
+              </svg>
+            </div>
+            <span>AppForge</span>
+          </div>
+          <p>Convert HTML to Native APK with Flutter and AI. Free, open, and powerful.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#create">Create App</a>
+          <a href="#how-it-works">How It Works</a>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <a href="#">Documentation</a>
+          <a href="#">API Reference</a>
+          <a href="#">GitHub</a>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Built with ❤️ using Flutter & AI — AppForge © 2024</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

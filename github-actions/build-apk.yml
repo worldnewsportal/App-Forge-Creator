@@ -1,0 +1,44 @@
+name: Build Flutter APK & AAB
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.0'
+          channel: 'stable'
+          cache: true
+      - name: Create keystore
+        run: |
+          keytool -genkey -v -keystore android/app/release-keystore.jks \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -alias key -storepass android -keypass android \
+            -dname "CN=Developer, OU=Dev, O=App, L=City, ST=State, C=US"
+      - name: Create key.properties
+        run: |
+          echo "storePassword=android" > android/key.properties
+          echo "keyPassword=android" >> android/key.properties
+          echo "keyAlias=key" >> android/key.properties
+          echo "storeFile=release-keystore.jks" >> android/key.properties
+      - run: flutter pub get
+      - run: flutter build apk --release
+      - run: flutter build appbundle --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk-release
+          path: build/app/outputs/flutter-apk/app-release.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: aab-release
+          path: build/app/outputs/bundle/release/app-release.aab
